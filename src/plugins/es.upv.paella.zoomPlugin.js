@@ -186,11 +186,12 @@ export class ZoomCanvas extends Canvas {
     }
 
     zoomOut() {
-        const zoom = this.currentZoom * 0.9;
-        if (zoom>=1) {
+        // const zoom = this.currentZoom * 0.9;
+        const zoom = Math.max(1, this.currentZoom * 0.9);
+        // if (zoom>=1) {
             this.currentZoom = zoom;
             this._playerCenter = setZoom(this.element, this._videoPlayer.element, this.currentZoom);
-        }
+        // }
     }
 }
 
